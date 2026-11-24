@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{% block title %}Мой блог достижений | Code & Coffee{% endblock %}</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&family=Mrs+Saint+Delafield&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <header class="site-header">
+        <a href="{{ url_for('home') }}#home" class="logo">
+            Code & Coffee<span>.</span>
+        </a>
+
+        <nav class="navigation">
+            <a href="{{ url_for('home') }}#about">Обо мне</a>
+            <a href="{{ url_for('home') }}#skills">Навыки</a>
+            <a href="{{ url_for('home') }}#progress">Прогресс</a>
+            <a href="{{ url_for('home') }}#achievements">Достижения</a>
+            <a href="{{ url_for('home') }}#goal">Моя цель</a>
+            <a href="{{ url_for('diary') }}">Мой дневник</a>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}
+
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <p class="eyebrow">МОЙ ПУТЬ К ЗНАНИЯМ</p>
+
+                <h1>
+                    Маленькие шаги,<br>
+                    <span>большие достижения.</span>
+                </h1>
+
+                <p class="hero-description">
+                    Личный дневник моего обучения, академических успехов
+                    и развития навыков в сфере информационных технологий.
+                </p>
+
+                <a href="#progress" class="main-button">
+                    Посмотреть мой прогресс
+                </a>
+
+                <a href="{{ url_for('diary') }}" class="main-button">
+                    Открыть дневник ✧
+                </a>
+            </div>
+
+            <div class="hero-decoration">
+                <div class="decoration-card">
+                    <span class="decoration-symbol">✧</span>
+                    <p>Учиться</p>
+                    <p>Развиваться</p>
+                    <p>Достигать</p>
+                </div>
+            </div>
+
+            <span class="hero-caption">Мой учебный дневник</span>
+        </section>
+
+        <section class="section about-section" id="about">
+            <div class="section-heading">
+                <p class="eyebrow">01 — ЗНАКОМСТВО</p>
+                <h2>Обо мне</h2>
+                <p class="section-subtitle">
+                    Каждый новый навык — ещё один шаг к моей цели.
+                </p>
+            </div>
+
+            <div class="about-card">
+                <div class="profile-placeholder">
+                    <img
+                        src="{{ url_for('static', filename='images/profile.jpg') }}"
+                        alt="Моя фотография"
+                    >
+                </div>
+
+                <div class="about-text">
+                    <h3>Добро пожаловать в мой блог достижений.</h3>
+
+                    <p>
+                        Я изучаю программирование и постепенно развиваю
+                        свои знания и навыки в области информационных
+                        технологий. Мне интересно разбираться в принципах
+                        работы программ, создавать собственные проекты
+                        и находить решения технических задач.
+                    </p>
+
+                    <p>
+                        На этом сайте представлены мои учебные результаты,
+                        завершённые курсы, текущие занятия и цели
+                        на будущее. Он отражает мой интерес к постоянному
+                        обучению и профессиональному развитию.
+                    </p>
+
+                    <span class="signature">Code & Coffee</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="section skills-section" id="skills">
+            <div class="section-heading">
+                <p class="eyebrow">02 — РАЗВИТИЕ НАВЫКОВ</p>
+                <h2>Мои навыки</h2>
+                <p class="section-subtitle">
+                    Технологии и направления, которые я изучаю.
+                </p>
+            </div>
+
+            <div class="skills-grid">
+                <article class="skill-card">
+                    <span class="skill-number">01</span>
+                    <h3>Python</h3>
+                    <p>Основы программирования и синтаксис языка.</p>
+                </article>
+
+                <article class="skill-card">
+                    <span class="skill-number">02</span>
+                    <h3>Git</h3>
+                    <p>Контроль версий и управление проектами.</p>
+                </article>
+
+                <article class="skill-card">
+                    <span class="skill-number">03</span>
+                    <h3>Linux</h3>
+                    <p>Основы процессов и потоков операционной системы.</p>
+                </article>
+
+                <article class="skill-card">
+                    <span class="skill-number">04</span>
+                    <h3>Алгоритмы</h3>
+                    <p>Алгоритмы и структуры данных.</p>
+                </article>
+
+                <article class="skill-card">
+                    <span class="skill-number">05</span>
+                    <h3>Базы данных</h3>
+                    <p>Основы баз данных и работа с информацией.</p>
+                </article>
+
+                <article class="skill-card">
+                    <span class="skill-number">06</span>
+                    <h3>Веб-разработка</h3>
+                    <p>Изучение фреймворков Flask и Django.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section progress-section" id="progress">
+            <div class="section-heading">
+                <p class="eyebrow">03 — УЧЕБНЫЕ РЕЗУЛЬТАТЫ</p>
+                <h2>Мой учебный прогресс</h2>
+                <p class="section-subtitle">
+                    Информация о выполнении учебных дисциплин.
+                </p>
+            </div>
+
+            <div class="indicator-list">
+                <p><strong>1.</strong> Выполнение тем</p>
+                <p><strong>2.</strong> Выполнение домашних заданий</p>
+                <p><strong>3.</strong> Комментарии</p>
+            </div>
+
+            <div class="table-wrapper">
+                <table class="progress-table">
+                    <thead>
+                        <tr>
+                            <th>Основы синтаксиса Python</th>
+                            <th>Система контроля версий Git</th>
+                            <th>Linux: основы процессов и потоков</th>
+                            <th>Алгоритмы и структуры данных</th>
+                            <th>Database</th>
+                            <th>Продвинутый Python</th>
+                            <th>Фреймворк Flask</th>
+                            <th>Фреймворк Django</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>Завершено</td>
+                            <td>Завершено</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <td>Курс зачтён</td>
+                            <td>Курс зачтён</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <td>Итоговая оценка — 98/100.</td>
+                            <td>Итоговая оценка — 99/100.</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p class="table-note">
+                Заполнены только первые две дисциплины.
+                Остальные ячейки оставлены пустыми согласно требованиям задания.
+            </p>
+        </section>
+
+        <section class="section achievements-section" id="achievements">
+            <div class="section-heading">
+                <p class="eyebrow">04 — МОИ ДОСТИЖЕНИЯ</p>
+                <h2>Завершённые курсы и текущие занятия</h2>
+                <p class="section-subtitle">
+                    Мои результаты и направления дальнейшего обучения.
+                </p>
+            </div>
+
+            <div class="achievement-grid">
+                <article class="achievement-card completed">
+                    <span class="status-label">Завершено</span>
+                    <h3>Основы синтаксиса Python</h3>
+                    <p class="grade">98/100</p>
+                    <p>Курс успешно пройден.</p>
+                </article>
+
+                <article class="achievement-card completed">
+                    <span class="status-label">Завершено</span>
+                    <h3>Система контроля версий Git</h3>
+                    <p class="grade">99/100</p>
+                    <p>Курс успешно пройден.</p>
+                </article>
+
+                <article class="achievement-card completed">
+                    <span class="status-label">Завершено</span>
+                    <h3>Linux: основы процессов и потоков</h3>
+                    <p class="grade">100/100</p>
+                    <p>Курс успешно пройден.</p>
+                </article>
+
+                <article class="achievement-card completed">
+                    <span class="status-label">Завершено</span>
+                    <h3>Алгоритмы и структуры данных</h3>
+                    <p class="grade">98/100</p>
+                    <p>Курс успешно пройден.</p>
+                </article>
+
+                <article class="achievement-card completed">
+                    <span class="status-label">Завершено</span>
+                    <h3>Database</h3>
+                    <p class="grade">100/100</p>
+                    <p>Курс успешно пройден.</p>
+                </article>
+
+                <article class="achievement-card in-progress">
+                    <span class="status-label">В процессе</span>
+                    <h3>Продвинутый Python</h3>
+                    <p>Продолжаю изучение языка программирования.</p>
+                </article>
+
+                <article class="achievement-card in-progress">
+                    <span class="status-label">В процессе</span>
+                    <h3>Фреймворк Flask</h3>
+                    <p>Изучаю разработку веб-приложений.</p>
+                </article>
+
+                <article class="achievement-card in-progress">
+                    <span class="status-label">В процессе</span>
+                    <h3>Фреймворк Django</h3>
+                    <p>Продолжаю изучение веб-разработки.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="final-goal" id="goal">
+            <p class="eyebrow">МОЯ КОНЕЧНАЯ ЦЕЛЬ</p>
+            <span class="goal-star">✧</span>
+            <h2>Final Exam</h2>
+            <p>
+                Моя главная академическая цель — успешно сдать итоговый
+                экзамен и продемонстрировать знания и навыки,
+                приобретённые в процессе обучения.
+            </p>
+            <span class="goal-status">Цель впереди</span>
+        </section>
+
+        <section class="contact-section">
+            <p class="eyebrow">05 — ПОСТОЯННОЕ РАЗВИТИЕ</p>
+            <h2>Учиться. Практиковаться. Создавать.</h2>
+            <p>
+                Каждое достижение открывает новые возможности для развития.
+            </p>
+            <span class="signature">Code & Coffee</span>
+        </section>
+
+        {% endblock %}
+    </main>
+
+    <footer class="site-footer">
+        <p>© 2026 Code & Coffee</p>
+        <p>Личный блог учебных достижений</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,123 @@
+{% extends "index.html" %}
+
+{% block title %}Дневник программиста | Code & Coffee{% endblock %}
+
+{% block content %}
+
+<section class="diary-hero">
+    <p class="eyebrow">МОЙ ЛИЧНЫЙ ДНЕВНИК · 2026</p>
+
+    <h1>Дневник <span>программиста</span></h1>
+
+    <p class="diary-description">
+        Здесь я сохраняю свои учебные заметки, записываю новые знания
+        и отмечаю маленькие достижения на пути в программировании.
+        Каждая запись — ещё один шаг вперёд.
+    </p>
+
+    <div class="signature">Code & Coffee</div>
+</section>
+
+
+<section class="diary-section">
+
+    <div class="section-heading">
+        <p class="eyebrow">МОИ УЧЕБНЫЕ ЗАМЕТКИ</p>
+
+        <h2>Добавить новую <span>запись</span></h2>
+
+        <p>
+            Здесь я могу записывать изученные темы,
+            важные моменты и полезную информацию.
+        </p>
+    </div>
+
+    <form action="{{ url_for('diary') }}" method="POST" class="note-form">
+
+        <label for="title">Заголовок записи</label>
+
+        <input
+            type="text"
+            id="title"
+            name="title"
+            placeholder="Например: Основы Flask"
+            maxlength="100"
+            required
+        >
+
+        <label for="subtitle">Подзаголовок</label>
+
+        <input
+            type="text"
+            id="subtitle"
+            name="subtitle"
+            placeholder="Краткое описание записи"
+            maxlength="200"
+        >
+
+        <label for="content">Текст записи</label>
+
+        <textarea
+            id="content"
+            name="content"
+            rows="6"
+            placeholder="Здесь я записываю всё самое важное..."
+            required
+        ></textarea>
+
+        <button type="submit">Сохранить заметку ✦</button>
+
+    </form>
+
+</section>
+
+
+<section class="entries-section">
+
+    <div class="section-heading">
+        <p class="eyebrow">МОЙ ПРОГРЕСС</p>
+
+        <h2>Сохранённые <span>заметки</span></h2>
+    </div>
+
+    <div class="notes-grid">
+
+        {% if notes %}
+
+            {% for note in notes %}
+
+                <article class="note-card">
+
+                    <span class="note-number">✦ МОЯ ЗАМЕТКА</span>
+
+                    <h3>{{ note.title }}</h3>
+
+                    {% if note.subtitle %}
+                        <h4 class="note-subtitle">
+                            {{ note.subtitle }}
+                        </h4>
+                    {% endif %}
+
+                    <p>{{ note.text }}</p>
+
+                    <div class="note-decoration">
+                        — Code & Coffee
+                    </div>
+
+                </article>
+
+            {% endfor %}
+
+        {% else %}
+
+            <p class="empty-message">
+                Пока здесь нет заметок. Я скоро добавлю свои первые записи!
+            </p>
+
+        {% endif %}
+
+    </div>
+
+</section>
+
+{% endblock %}

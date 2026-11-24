@@ -1,0 +1,780 @@
+:root {
+    --ivory: #F8F6EF;
+    --cream: #F0EDE3;
+    --white: #FFFFFF;
+    --sage: #DCE4D5;
+    --light-sage: #E9EEE5;
+    --deep-sage: #526B59;
+    --forest: #293E32;
+    --lavender: #E5E0ED;
+    --champagne: #EDE5D5;
+    --olive: #A8B39A;
+    --taupe: #B6A98E;
+    --text: #39483D;
+    --muted: #81877D;
+    --border: #E4E2D9;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--ivory);
+    color: var(--text);
+    font-family: "Manrope", sans-serif;
+    line-height: 1.7;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.site-header {
+    width: 100%;
+    min-height: 82px;
+    padding: 18px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    background: rgba(248, 246, 239, 0.95);
+    border-bottom: 1px solid var(--border);
+}
+
+.logo {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--forest);
+    white-space: nowrap;
+}
+
+.logo span {
+    color: var(--taupe);
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.navigation a {
+    color: var(--muted);
+    font-size: 13px;
+    transition: color 0.3s ease;
+}
+
+.navigation a:hover {
+    color: var(--deep-sage);
+}
+
+.hero {
+    min-height: 570px;
+    padding: 100px 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 80% 25%, #E5E0ED 0, transparent 25%),
+        linear-gradient(120deg, #F8F6EF, #E9EEE5);
+}
+
+.hero-content {
+    max-width: 650px;
+    position: relative;
+    z-index: 1;
+}
+
+.eyebrow {
+    color: var(--deep-sage);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+}
+
+.hero h1 {
+    color: var(--forest);
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(45px, 6vw, 76px);
+    font-weight: 600;
+    line-height: 1.08;
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    color: var(--deep-sage);
+    font-style: italic;
+}
+
+.hero-description {
+    max-width: 470px;
+    color: var(--muted);
+    font-size: 15px;
+    margin-bottom: 32px;
+}
+
+.main-button {
+    display: inline-block;
+    padding: 13px 25px;
+    border-radius: 30px;
+    background: var(--forest);
+    color: var(--white);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: 0.3s ease;
+}
+
+.main-button:hover {
+    background: var(--deep-sage);
+    transform: translateY(-3px);
+}
+
+.hero-decoration {
+    width: 260px;
+    height: 310px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(82, 107, 89, 0.25);
+    border-radius: 48% 48% 42% 42%;
+    background: rgba(255, 255, 255, 0.35);
+    transform: rotate(4deg);
+}
+
+.decoration-card {
+    width: 190px;
+    padding: 35px 20px;
+    text-align: center;
+    border-radius: 100px;
+    background: var(--white);
+    box-shadow: 0 15px 40px rgba(41, 62, 50, 0.08);
+    transform: rotate(-4deg);
+}
+
+.decoration-symbol {
+    display: block;
+    color: var(--taupe);
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+.decoration-card p {
+    color: var(--deep-sage);
+    font-family: "Cormorant Garamond", serif;
+    font-size: 25px;
+    line-height: 1.4;
+}
+
+.hero-caption {
+    position: absolute;
+    bottom: 25px;
+    right: 9%;
+    color: var(--muted);
+    font-family: "Cormorant Garamond", serif;
+    font-size: 16px;
+    font-style: italic;
+}
+
+.section {
+    padding: 95px 8%;
+}
+
+.section-heading {
+    max-width: 750px;
+    margin: 0 auto 45px;
+    text-align: center;
+}
+
+.section-heading h2,
+.contact-section h2 {
+    color: var(--forest);
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(36px, 5vw, 52px);
+    font-weight: 600;
+    line-height: 1.15;
+    margin-bottom: 12px;
+}
+
+.section-subtitle {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.about-section {
+    background: var(--white);
+}
+
+.about-card {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 35px;
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    align-items: center;
+    gap: 45px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--ivory);
+}
+
+.profile-placeholder {
+    height: 300px;
+    overflow: hidden;
+    border-radius: 150px 150px 8px 8px;
+    background: var(--sage);
+}
+
+.profile-placeholder img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.about-text h3 {
+    color: var(--forest);
+    font-family: "Cormorant Garamond", serif;
+    font-size: 30px;
+    line-height: 1.2;
+    margin-bottom: 18px;
+}
+
+.about-text p {
+    color: var(--muted);
+    font-size: 14px;
+    margin-bottom: 14px;
+    overflow-wrap: break-word;
+}
+
+.signature {
+    display: inline-block;
+    margin-top: 12px;
+    color: var(--deep-sage);
+    font-family: "Mrs Saint Delafield", cursive;
+    font-size: 42px;
+}
+
+.skills-section {
+    background: var(--ivory);
+}
+
+.skills-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.skill-card {
+    min-height: 190px;
+    padding: 27px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--white);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(41, 62, 50, 0.07);
+}
+
+.skill-number {
+    color: var(--taupe);
+    font-family: "Cormorant Garamond", serif;
+    font-size: 20px;
+}
+
+.skill-card h3 {
+    color: var(--forest);
+    font-family: "Cormorant Garamond", serif;
+    font-size: 27px;
+    margin: 8px 0;
+}
+
+.skill-card p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.progress-section {
+    background: var(--white);
+}
+
+.indicator-list {
+    max-width: 1100px;
+    margin: 0 auto 18px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px 28px;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.indicator-list strong {
+    color: var(--deep-sage);
+}
+
+.table-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow-x: auto;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--white);
+}
+
+.progress-table {
+    width: 100%;
+    min-width: 1100px;
+    border-collapse: collapse;
+    table-layout: fixed;
+    text-align: center;
+    font-size: 12px;
+}
+
+.progress-table th,
+.progress-table td {
+    padding: 17px 12px;
+    border: 1px solid var(--border);
+    overflow-wrap: break-word;
+    vertical-align: middle;
+}
+
+.progress-table thead th {
+    background: var(--forest);
+    color: var(--white);
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.progress-table tbody td {
+    color: var(--text);
+    background: var(--white);
+}
+
+.progress-table tbody tr:nth-child(even) td {
+    background: #FAF9F5;
+}
+
+.table-note {
+    max-width: 900px;
+    margin: 18px auto 0;
+    color: var(--muted);
+    font-size: 12px;
+    text-align: center;
+}
+
+.achievements-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--ivory);
+}
+
+.achievements-section .section-heading {
+    width: 100%;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.achievement-grid {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.achievement-card {
+    min-height: 210px;
+    padding: 25px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--white);
+    text-align: left;
+    transition: transform 0.3s ease;
+}
+
+.achievement-card:hover {
+    transform: translateY(-4px);
+}
+
+.status-label {
+    display: inline-block;
+    padding: 5px 12px;
+    border-radius: 30px;
+    background: var(--light-sage);
+    color: var(--deep-sage);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.in-progress .status-label {
+    background: var(--lavender);
+    color: #686078;
+}
+
+.achievement-card h3 {
+    color: var(--forest);
+    font-family: "Cormorant Garamond", serif;
+    font-size: 24px;
+    line-height: 1.2;
+    margin: 18px 0 10px;
+}
+
+.achievement-card p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.achievement-card .grade {
+    color: var(--deep-sage);
+    font-family: "Cormorant Garamond", serif;
+    font-size: 27px;
+    font-weight: 700;
+}
+
+.final-goal {
+    padding: 75px 20px;
+    background: var(--forest);
+    color: var(--white);
+    text-align: center;
+}
+
+.final-goal .eyebrow {
+    color: var(--sage);
+}
+
+.goal-star {
+    display: block;
+    color: var(--taupe);
+    font-size: 35px;
+    margin: 10px 0;
+}
+
+.final-goal h2 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 52px;
+    font-weight: 500;
+    margin-bottom: 12px;
+}
+
+.final-goal p {
+    max-width: 500px;
+    margin: 0 auto 22px;
+    color: #D5DED4;
+    font-size: 14px;
+}
+
+.goal-status {
+    display: inline-block;
+    padding: 8px 20px;
+    border: 1px solid #A8B39A;
+    border-radius: 30px;
+    color: var(--white);
+    font-size: 12px;
+}
+
+.contact-section {
+    padding: 85px 20px;
+    background: var(--white);
+    text-align: center;
+}
+
+.contact-section h2 {
+    max-width: 700px;
+    margin: 0 auto 15px;
+}
+
+.contact-section p:not(.eyebrow) {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.site-footer {
+    padding: 25px 8%;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    background: var(--cream);
+    color: var(--muted);
+    font-size: 11px;
+}
+
+@media (max-width: 900px) {
+    .site-header {
+        flex-direction: column;
+    }
+
+    .hero {
+        padding: 75px 7%;
+    }
+
+    .hero-decoration {
+        width: 210px;
+        height: 260px;
+    }
+
+    .skills-grid,
+    .achievement-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 650px) {
+    .navigation {
+        justify-content: center;
+        gap: 12px 18px;
+    }
+
+    .hero {
+        min-height: auto;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 75px 7% 100px;
+    }
+
+    .hero-decoration {
+        align-self: center;
+    }
+
+    .hero-caption {
+        right: 7%;
+        bottom: 20px;
+    }
+
+    .section {
+        padding: 70px 6%;
+    }
+
+    .about-card {
+        grid-template-columns: 1fr;
+        padding: 22px;
+        gap: 25px;
+    }
+
+    .profile-placeholder {
+        width: 210px;
+        height: 240px;
+        margin: 0 auto;
+    }
+
+    .skills-grid,
+    .achievement-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .site-footer {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+.diary-hero {
+    min-height: 390px;
+    padding: 85px 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background:
+        radial-gradient(circle at 80% 20%, #E5E0ED 0, transparent 28%),
+        linear-gradient(135deg, var(--ivory), var(--sage));
+}
+
+.diary-hero h1 {
+    color: var(--forest);
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(44px, 6vw, 68px);
+    line-height: 1.1;
+    margin-bottom: 18px;
+}
+
+.diary-hero h1 span,
+.section-heading h2 span {
+    color: var(--deep-sage);
+    font-style: italic;
+}
+
+.diary-description {
+    max-width: 550px;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.diary-section {
+    padding: 85px 8%;
+    background: var(--white);
+}
+
+.note-form {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 35px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: var(--ivory);
+    box-shadow: 0 15px 40px rgba(41, 62, 50, 0.05);
+}
+
+.note-form label {
+    margin: 15px 0 8px;
+    color: var(--forest);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.note-form input,
+.note-form textarea {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    outline: none;
+    background: var(--white);
+    color: var(--text);
+    font-family: "Manrope", sans-serif;
+    font-size: 13px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.note-form input:focus,
+.note-form textarea:focus {
+    border-color: var(--deep-sage);
+    box-shadow: 0 0 0 3px rgba(82, 107, 89, 0.1);
+}
+
+.note-form textarea {
+    resize: vertical;
+}
+
+.note-form button {
+    align-self: flex-start;
+    margin-top: 25px;
+    padding: 14px 27px;
+    border: none;
+    border-radius: 30px;
+    background: var(--forest);
+    color: var(--white);
+    font-family: "Manrope", sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.note-form button:hover {
+    background: var(--deep-sage);
+    transform: translateY(-2px);
+}
+
+.entries-section {
+    padding: 85px 8%;
+    background: var(--ivory);
+}
+
+.notes-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.note-card {
+    min-width: 0;
+    padding: 30px;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    background: var(--white);
+    box-shadow: 0 10px 30px rgba(41, 62, 50, 0.04);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.note-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 35px rgba(41, 62, 50, 0.08);
+}
+
+.note-number {
+    color: var(--taupe);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.note-card h3 {
+    margin: 15px 0 12px;
+    color: var(--forest);
+    font-family: "Cormorant Garamond", serif;
+    font-size: 29px;
+}
+
+.note-card p {
+    color: var(--muted);
+    font-size: 13px;
+    overflow-wrap: anywhere;
+    white-space: pre-wrap;
+}
+
+.note-decoration {
+    margin-top: 22px;
+    color: var(--deep-sage);
+    font-family: "Cormorant Garamond", serif;
+    font-size: 19px;
+    font-style: italic;
+    text-align: right;
+}
+
+.empty-message {
+    grid-column: 1 / -1;
+    padding: 30px;
+    color: var(--muted);
+    text-align: center;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+}
+
+@media (max-width: 650px) {
+    .diary-hero {
+        padding: 70px 7%;
+    }
+
+    .diary-section,
+    .entries-section {
+        padding: 65px 6%;
+    }
+
+    .note-form {
+        padding: 23px;
+    }
+
+    .notes-grid {
+        grid-template-columns: 1fr;
+    }
+}
