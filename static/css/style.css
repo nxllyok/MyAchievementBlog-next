@@ -778,3 +778,29 @@ a {
         grid-template-columns: 1fr;
     }
 }
+.auth-actions {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.auth-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 26px;
+    border: 1px solid #526B59;
+    border-radius: 999px;
+    background: #526B59;
+    color: #F7F6F0;
+    text-decoration: none;
+    font-family: 'Manrope', sans-serif;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.auth-button:hover {
+    background: #34483B;
+    transform: translateY(-2px);
+}

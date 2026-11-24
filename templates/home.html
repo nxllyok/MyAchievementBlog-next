@@ -1,0 +1,27 @@
+{% extends "index.html" %}
+
+{% block title %}Добро пожаловать | Code & Coffee{% endblock %}
+
+{% block content %}
+<section class="diary-hero">
+    <p class="eyebrow">CODE & COFFEE</p>
+    <h1>Добро пожаловать</h1>
+    <p class="diary-description">
+        Ваше пространство для обучения, заметок и новых достижений.
+    </p>
+    <div class="signature">Code & Coffee</div>
+</section>
+
+<section class="diary-section">
+    <div class="section-heading">
+        <p class="eyebrow">ВАШ АККАУНТ</p>
+        <h2>Начните <span>сейчас</span></h2>
+        <p>Зарегистрируйтесь или войдите, чтобы открыть дневник программиста.</p>
+    </div>
+
+    <div class="auth-actions">
+        <a href="{{ url_for('register') }}" class="auth-button">Регистрация ✦</a>
+        <a href="{{ url_for('login') }}" class="auth-button">Войти в аккаунт →</a>
+    </div>
+</section>
+{% endblock %}
